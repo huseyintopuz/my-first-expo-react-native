@@ -1,8 +1,9 @@
-import { Image, StyleSheet } from 'react-native'
+import { Image, StyleSheet } from 'react-native';
 
-export default function ImageViewer({ FonImage }) {
+export default function ImageViewer({ selectedImage, fonImage }) {
+  const imageSource = selectedImage ? { uri: selectedImage } : fonImage
   return (
-    <Image source={FonImage} />
+    <Image source={imageSource} style={styles.image} />
   )
 }
 
